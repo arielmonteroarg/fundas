@@ -6,14 +6,14 @@
     if (closeButton && headerTop) {
         closeButton.addEventListener('click', () => {
             headerTop.style.display = 'none';
-        });
+        });  
     }
-}
+}  
 
 export function renderNavbar() {
     const navbar = document.getElementById('navbar');
     navbar.innerHTML = `
-      <div class="header-top">Descuentos Por ordenes superiores a $15000.00 
+      <div class="header-top">Descuentos Por ordenes superiores a $1000.00 
         <button class="close-button" aria-label="Cerrar mensaje">×</button>
         </div>
    

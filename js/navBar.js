@@ -1,4 +1,14 @@
-
+  // Agregar esta función en tu archivo navbar.js
+  function setupHeaderTop() {
+    const closeButton = document.querySelector('.close-button');
+    const headerTop = document.querySelector('.header-top');
+    
+    if (closeButton && headerTop) {
+        closeButton.addEventListener('click', () => {
+            headerTop.style.display = 'none';
+        });  
+    }
+}  
 
 export function renderNavbar() {
     const navbar = document.getElementById('navbar');
@@ -27,19 +37,8 @@ export function renderNavbar() {
         </div>
     </nav>
 `;
-/*  setupHeaderTop(); */
+ setupHeaderTop();
   }
-/*     // Agregar esta función en tu archivo navbar.js
-    function setupHeaderTop() {
-        const closeButton = document.querySelector('.close-button');
-        const headerTop = document.querySelector('.header-top');
-        
-        if (closeButton && headerTop) {
-            closeButton.addEventListener('click', () => {
-                headerTop.style.display = 'none';
-            });  
-        }
-    }   */
  
   renderNavbar();
 

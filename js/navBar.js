@@ -27,9 +27,9 @@ export function renderNavbar() {
         </div>
     </nav>
 `;
- setupHeaderTop();
+/*  setupHeaderTop(); */
   }
-    // Agregar esta función en tu archivo navbar.js
+/*     // Agregar esta función en tu archivo navbar.js
     function setupHeaderTop() {
         const closeButton = document.querySelector('.close-button');
         const headerTop = document.querySelector('.header-top');
@@ -39,7 +39,7 @@ export function renderNavbar() {
                 headerTop.style.display = 'none';
             });  
         }
-    }  
+    }   */
  
   renderNavbar();
 

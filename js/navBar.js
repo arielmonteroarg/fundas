@@ -1,4 +1,3 @@
-
   // Agregar esta función en tu archivo navbar.js
   function setupHeaderTop() {
     const closeButton = document.querySelector('.close-button');
@@ -14,7 +13,7 @@
 export function renderNavbar() {
     const navbar = document.getElementById('navbar');
     navbar.innerHTML = `
-      <div class="header-top">Descuentos Por ordenes superiores a $15000.00 🚚✈️🌎 
+      <div class="header-top">Descuentos Por ordenes superiores a $15000.00 
         <button class="close-button" aria-label="Cerrar mensaje">×</button>
         </div>
    

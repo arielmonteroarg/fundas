@@ -6,18 +6,103 @@
   <title>Phone Cases</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"  crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/index.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
 </head>
 <body>
   <header id="navbar">  </header>
   <main>
-    <h1 class="main-title">FUNDAS PARA TELÉFONOS</h1>
-    <section id="how-it-works"></section>
-    <section id="product-grid"></section>
+    <!-- Banner Section -->
+    <section class="banner">
+      <div class="banner-content">
+        <div class="banner-text">
+          <h1>BLACK FRIDAY</h1>
+          <div class="coupon-tag">
+            <p>COUPON CODE:</p>
+            <h2>BLACK24</h2>
+            <p>20% OFF</p>
+          </div>
+          <div class="offer-end">
+            <h3>HURRY UP, THIS OFFER ENDS ON 02/12</h3>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products-section">
+      <h2 class="section-title">SHOP BY PRODUCT</h2>
+    <!-- En la sección de productos, actualiza las rutas de las imágenes -->
+<div class="product-categories">
+  <div class="category-card">
+    <a href="product.html">
+      <img src="https://i.etsystatic.com/27434294/r/il/a9c915/4978264021/il_794xN.4978264021_8n2e.jpg" alt="Phone Cases">
+      <h3>PHONE CASES</h3>
+    </a>
+  </div>
+  <div class="category-card">
+    <a href="product.html">
+      <img src="https://i.etsystatic.com/31766824/r/il/e9e1d4/3800908421/il_1588xN.3800908421_3oq1.jpg" alt="Keychains">
+      <h3>KEYCHAINS</h3>
+    </a>
+  </div>
+  <div class="category-card">
+    <a href="product.html">
+      <img src="https://i.etsystatic.com/35831480/r/il/7c1e0c/4084260274/il_1588xN.4084260274_fu9r.jpg" alt="Necklaces">
+      <h3>NECKLACES</h3>
+    </a>
+  </div>
+</div>
+    </section>
   </main>
   <footer class="footer">
-    <p>© 2024 CMX Graphics. All rights reserved.</p>
+    <!-- Stay in Touch Section -->
+    <div class="stay-in-touch">
+      <h3>STAY IN TOUCH</h3>
+      <form class="footer-form">
+        <input type="email" placeholder="Enter your email address">
+        <button type="submit">SUBMIT</button>
+      </form>
+    </div>
+  
+    <!-- Columns Section -->
+    <div class="footer-content">
+      <!-- Products Section -->
+      <div class="footer-section">
+        <h3>PRODUCTS</h3>
+        <ul>
+          <li><a href="#">Phone Cases</a></li>
+          <li><a href="#">Car Pendants</a></li>
+          <li><a href="#">Keychains</a></li>
+          <li><a href="#">Necklaces</a></li>
+          <li><a href="#">Mini Plate Stickers</a></li>
+          <li><a href="#">Track my order</a></li>
+        </ul>
+      </div>
+  
+      <!-- Information Section -->
+      <div class="footer-section">
+        <h3>INFORMATION</h3>
+        <ul>
+          <li><a href="#">Contact Us</a></li>
+          <li><a href="#">FAQ</a></li>
+        </ul>
+      </div>
+  
+      <!-- Contact Info Section -->
+      <div class="footer-section">
+        <ul class="contact-info">
+          <li><i class="fas fa-phone"></i> +55 (0) 98385-4082</li>
+          <li><i class="fas fa-envelope"></i> contato@cmxgraphics.com</li>
+          <li><i class="fas fa-map-marker-alt"></i> Rua Santa Rosa, 144 - Florianópolis/SC - 88035-270 - Brasil</li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <p>© 2024 CMX Graphics. All rights reserved.</p>
+    </div>
   </footer>
   <script src="js/navBar.js" type="module"></script>
   <script src="js/howltWorks.js" type="module"></script>

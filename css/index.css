@@ -1,0 +1,250 @@
+.banner {
+    background-image: url('https://img.freepik.com/free-photo/black-brick-wall-textured-background_53876-63572.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.banner-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.banner h1 {
+  font-size: 4rem;
+  color: #ff0000;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.coupon-tag {
+  background: white;
+  color: black;
+  padding: 1rem;
+  border-radius: 10px;
+  display: inline-block;
+  margin: 1rem 0;
+}
+
+.products-section {
+  padding: 4rem 2rem;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.product-categories {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.category-card {
+  text-align: center;
+  background: #f5f5f5;
+  padding: 1rem;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+.category-card img {
+    width: 100%;
+    height: 300px; /* altura fija para todas las imágenes */
+    object-fit: cover; /* mantiene la proporción de la imagen */
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+  }
+  
+  .category-card:hover img {
+    transform: scale(1.05);
+  }
+  
+  .category-card a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  .banner-content {
+    background: rgba(0, 0, 0, 0.6); /* fondo semi-transparente para mejor legibilidad */
+    padding: 2rem;
+    border-radius: 10px;
+  }
+
+.category-card h3 {
+  margin-top: 1rem;
+  font-size: 1.5rem;
+}
+
+
+/* Media queries para diferentes tamaños de pantalla */
+@media (min-width: 768px) {
+    .product-categories {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  
+  @media (max-width: 767px) {
+    .product-categories {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .banner-content {
+      text-align: center;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .product-categories {
+      grid-template-columns: 1fr;
+    }
+    
+    .category-card {
+      max-width: 100%;
+    }
+    
+    .banner {
+      min-height: 250px;
+    }
+    
+    .coupon-tag {
+      padding: 0.5rem;
+    }
+    
+    .coupon-tag h2 {
+      font-size: 1.5rem;
+    }
+  }
+
+
+
+.footer {
+    background-color: #333;
+    color: white;
+    padding: 40px 0 20px;
+  }
+  
+  /* Nuevo estilo para la sección Stay in Touch */
+  .stay-in-touch {
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto 40px;
+    padding: 0 20px;
+  }
+  
+  .stay-in-touch h3 {
+    color: white;
+    margin-bottom: 20px;
+  }
+  
+  .footer-form {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  
+  .footer-form input {
+    padding: 8px;
+    border: none;
+    width: 300px;
+  }
+  
+  .footer-form button {
+    background-color: #222;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .footer-form button:hover {
+    background-color: #444;
+  }
+  
+  /* Estilos para las columnas */
+  .footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    padding: 0 20px;
+    border-top: 1px solid #444;
+    padding-top: 40px;
+  }
+  
+  /* Los demás estilos se mantienen igual */
+  .footer-section h3 {
+    color: white;
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+  
+  .footer-section ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .footer-section ul li {
+    margin-bottom: 10px;
+  }
+  
+  .footer-section ul li a {
+    color: #999;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s ease;
+  }
+  
+  .footer-section ul li a:hover {
+    color: white;
+  }
+  
+  .contact-info li {
+    color: #999;
+    font-size: 14px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .contact-info i {
+    color: white;
+    width: 20px;
+  }
+  
+  .footer-bottom {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #444;
+  }
+  
+  /* Responsive design */
+  @media (max-width: 768px) {
+    .footer-content {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .footer-form {
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .footer-form input {
+      width: 100%;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .footer-content {
+      grid-template-columns: 1fr;
+    }
+  }

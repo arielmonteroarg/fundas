@@ -1,30 +1,37 @@
 import { createElement } from './funcionesExtras.js';
 import { cartState } from './cart.js';
 
-    const products = [
-      { id: 1, title: 'RIDING PHOTO',category: "Funda", description: 'Phone Case - Fox', price: 29.99, image: './img/img1.webp' },
-      { id: 2, title: 'YOUR PHOTO',category: "Funda",     description: 'Phone Case - Fox', price: 44.99, image: './img/img2.webp' },
-        { id: 3, title: 'FASTHOUSE',category: "Funda", description: 'Phone Case - Fox', price: 34.99, image: './img/img3.webp' },
+const products = [
+    { id: 1, title: 'RIDING PHOTO',category: "Funda", description: 'Phone Case - Fox', price: 10.00, image: './img/img1.webp' },
+    { id: 2, title: 'Samsung',category: "Funda",     description: 'Phone Case - Fox', price: 9.99, image: './img/img2.webp' },
+      { id: 3, title: 'FASTHOUSE',category: "Funda", description: 'Phone Case - Fox', price: 9.99, image: './img/img3.webp' },
 
-        { id: 4, title: 'RIDING PHOTO',category: "Funda", description: 'Phone Case - Fox', price: 29.99, image: './img/img1.webp' },
-        { id: 5, title: 'YOUR PHOTO',category: "Funda",     description: 'Phone Case - Fox', price: 44.99, image: './img/img2.webp' },
-          { id: 6, title: 'FASTHOUSE',category: "Funda", description: 'Phone Case - Fox', price: 34.99, image: './img/img3.webp' },
+      { id: 4, title: 'Samsung',category: "Funda", description: 'Phone Case - Fox', price: 29.99, image: './img/img1.webp' },
+      { id: 5, title: 'Xiaomi',category: "Funda",     description: 'Phone Case - Fox', price: 44.99, image: './img/img2.webp' },
+        { id: 6, title: 'Oppo',category: "Funda", description: 'Phone Case - Fox', price: 34.99, image: './img/img3.webp' },
 
-        { id: 7, title: 'RIDING PHOTO',category: "Funda", description: 'Phone Case - Fox', price: 34.99, image: './img/img1.webp' },
-        { id: 8, title: 'YOUR PHOTO',category: "Funda", description: 'Phone Case - Fox', price: 44.99, image: './img/img2.webp' },
-        { id: 9, title: 'FASTHOUSE',category: "Funda", description: 'Phone Case - Fox', price: 29.99, image: './img/img3.webp' },
+      { id: 7, title: 'Motorola',category: "Funda", description: 'Phone Case - Fox', price: 34.99, image: './img/img1.webp' },
+      { id: 8, title: 'Huawei',category: "Funda", description: 'Phone Case - Fox', price: 44.99, image: './img/img2.webp' },
+      { id: 9, title: 'Realme',category: "Funda", description: 'Phone Case - Fox', price: 29.99, image: './img/img3.webp' },
     ];
 
+    // Renderizar todos los productos al cargar la página
      const productGrid = document.getElementById('product-grid');
 
+     // Input de búsqueda
+const searchInput = document.getElementById('search-box');
+
+/* 
      if (productGrid) {
+      productGrid.innerHTML = ''; // Limpiar la cuadrícula
       products.forEach(product => {
         const productCard = renderProductGrid(product);
         productGrid.appendChild(productCard);
       });
     } else {
       console.error("El contenedor de productos no se encontró.");
-    }
+    } */
+
 
 export function renderProductGrid(product = ' ' ) {
 
@@ -47,7 +54,7 @@ export function renderProductGrid(product = ' ' ) {
     textContent: `$${product.price.toFixed(2)}`
   });
 
-  const priceTwo= createElement("p", { textContent: product.price });
+  const priceTwo= createElement("p", {textContent: ` $ ${ product.price}` });
   const details = createElement("div", { className: "details" });
 
   const addToCartButton = createElement("button", {
@@ -70,9 +77,54 @@ export function renderProductGrid(product = ' ' ) {
   details.append(title, description, category,priceTwo, addToCartButton );
   productCard.append(img, priceTag, details);
 
-  return productCard;
-
- 
+  return productCard; 
   }
   
-  renderProductGrid();
+// Renderizar todos los productos al cargar la página
+function renderAllProducts() {
+  productGrid.innerHTML = ''; // Limpiar la cuadrícula
+  products.forEach(product => {
+    const productCard = renderProductGrid(product);
+    productGrid.appendChild(productCard);
+  });
+}
+
+// Función para buscar productos
+function searchRecords() {
+  const searchTerm = searchInput.value.trim().toLowerCase();
+
+  // Filtrar los productos que coincidan con el término de búsqueda
+  const filteredProducts = products.filter(product => {
+    const title = product.title ? product.title.toLowerCase() : '';
+    const description = product.description ? product.description.toLowerCase() : '';
+    return title.includes(searchTerm) || description.includes(searchTerm);
+  });
+
+  productGrid.innerHTML = ''; // Limpiar la cuadrícula
+
+  if (filteredProducts.length === 0) {
+    // Mostrar mensaje si no hay resultados
+    productGrid.innerHTML = '<p>No se encontraron productos que coincidan con la búsqueda.</p>';
+    return;
+  }
+
+  // Renderizar los productos filtrados
+  filteredProducts.forEach(product => {
+    const productCard = renderProductGrid(product);
+    productGrid.appendChild(productCard);
+  });
+}
+
+// Eventos para el input de búsqueda
+searchInput.addEventListener("input", () => {
+/*   console.log('searchInput:', searchInput);
+  console.log('searchInput.value:', searchInput.value); */
+  const searchTerm = searchInput.value ? searchInput.value.trim() : '';
+  if (searchTerm.length >= 3 || searchTerm.length === 0) {
+    searchRecords();
+  }
+});
+
+
+  // Inicializar renderizado de productos
+renderAllProducts();

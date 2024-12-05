@@ -1,3 +1,5 @@
+  
+ 
   // Agregar esta función en tu archivo navbar.js
   function setupHeaderTop() {
     const closeButton = document.querySelector('.close-button');
@@ -13,14 +15,14 @@
 export function renderNavbar() {
     const navbar = document.getElementById('navbar');
     navbar.innerHTML = `
-      <div class="header-top">Descuentos Por ordenes superiores a $1000.00 
+      <div class="header-top">😜📢🤳Descuentos Por ordenes superiores a $1000.00 🔥🔥🔥 😎😎⏳⏳⏳
         <button class="close-button" aria-label="Cerrar mensaje">×</button>
         </div>
    
     <nav class="nav-container">
      <div class="logo"><a href="index.html" ><img src="img/logo.png" alt="logo"></a></div>
-        <div class="search-box">
-            <input type="search" placeholder="Buscar productos..." aria-label="Buscar">
+        <div  class="search-box">
+            <input id="search-box" type="search" placeholder="Buscar productos..." aria-label="Buscar">
         </div>
         
         

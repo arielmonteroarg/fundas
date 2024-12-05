@@ -20,13 +20,6 @@ export const cartState = {
       localStorage.setItem('productsTotal', this.counterProducts);
     },
 
-/*     updateCartCounter() {
-      const contadorCarrito = document.getElementById('contador-carrito');
-      if (contadorCarrito) {
-        const storedProducts = parseInt(localStorage.getItem('productsTotal'), 10) || 0;
-        contadorCarrito.textContent = `(${storedProducts})`;
-      }
-    }, */
     
     addToCart(product= '') {
       const existingItem = this.items.find(item => item.id === product.id);

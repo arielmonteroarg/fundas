@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,7 +10,7 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/addCart.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">  
 </head>
 <body>
   <header id="navbar">  </header>
@@ -21,10 +23,13 @@
         <p>Total: $<span id="cart-total">0.00</span></p>
         <button id="checkout-button" class="checkout-button">Finalizar compra</button>
       </div>
+      <div class="wallet_container"></div>
     </main>
   <footer class="footer">
     <p>© 2024 CMX Graphics. All rights reserved.</p>
-  </footer>
+  </footer>  
+  <script src="js/mercadoPago.js" type="module"></script>
+  <script src="https://sdk.mercadopago.com/js/v2"></script>
   <script src="js/navBar.js" type="module"></script>
   <script  src="js/cart.js"type="module"></script>
   <script  src="js/addCart.js"type="module"></script>

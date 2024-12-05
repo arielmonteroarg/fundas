@@ -1,0 +1,5 @@
+/php/
+/vendor/
+composer.json
+composer.lock
+/js/mercadoPago.js

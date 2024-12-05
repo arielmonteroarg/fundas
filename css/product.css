@@ -1,0 +1,55 @@
+/* Estilos para la tabla */
+table {
+border-collapse: collapse;
+width: 100%;
+}
+th, td {
+border: 1px solid #dddddd;
+text-align: left;
+padding: 8px;
+}
+th {
+background-color: #f2f2f2;
+}
+tr:nth-child(even) {
+background-color: #dddddd;
+}
+/* Estilos para el paginador */
+.pagination {
+display: flex;
+justify-content:  space-between;
+margin-top: 20px;
+}
+.nav-legend {
+display: flex;
+flex-grow: 1; /* Para que ocupe todo el espacio posible y empuje los botones hacia la derecha */
+}
+.pagination-button {
+display: flex;
+margin: 0 3px;
+cursor: pointer;
+padding: 7px 11px; /* Ajustar el tamaño del botón */
+border-radius: 3x; /* Ajustar la esquina del botón */
+background-color: #f2f2f2; /* Color de fondo predeterminado */
+color: #333; /* Color de texto predeterminado */
+transition: background-color 0.3s ease; /* Transición suave al pasar el cursor */
+}
+.pagination-button:hover {
+background-color: #333; /* Cambiar el color de fondo al pasar el cursor */
+color: #fff; /* Cambiar el color de texto al pasar el cursor */
+}
+.pagination-button.active {
+font-weight: bold;
+}
+/* Estilos para el campo de búsqueda */
+.search-container {
+display: flex;
+margin-left: 10px;
+margin-top: 10px;
+margin-bottom: 5px;
+}
+.pagination {
+display: flex;
+justify-content: space-between; /* Para alinear los elementos a los extremos */
+margin-top: 20px;
+}

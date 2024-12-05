@@ -1,15 +1,8 @@
 import { createElement } from './funcionesExtras.js';
 import { updateCartCounter } from './cartCounter.js';
 import { cartState } from './cart.js';
+import { crearPreferencia } from './mercadoPago.js';
 
-const paymentIcons = {
-  paypal: "https://cdn.iconscout.com/icon/free/png-256/free-paypal-54-675727.png",
-  mastercard: "https://cdn.iconscout.com/icon/free/png-256/free-mastercard-3521564-2944982.png",
-  visa: "https://cdn.iconscout.com/icon/free/png-256/free-visa-credit-card-banking-emv-payment-card-32261.png",
-  amex: "https://cdn.iconscout.com/icon/free/png-256/free-american-express-credit-card-banking-emv-payment-card-32262.png",
-  applepay: "https://cdn.iconscout.com/icon/free/png-256/free-apple-pay-5822959-4875454.png",
-  googlepay: "https://cdn.iconscout.com/icon/free/png-256/free-google-pay-2038779-1721670.png"
-};
 // Renderizar productos en el carrito
 export function renderCartItems() {
   cartState.init(); // Inicializar desde localStorage
@@ -18,12 +11,13 @@ export function renderCartItems() {
   const cartTotalElement = document.getElementById("cart-total");
 
   // Limpiar contenedor antes de renderizar
-  cartContainer.innerHTML = "`<h2>Productos</h2>`";
+  cartContainer.innerHTML = "<h2>Producto</h2>";
 
   // Si no hay productos en el carrito
   if (cartState.items.length === 0) {
     cartContainer.innerHTML = "<p>El carrito está vacío.</p>";
     cartTotalElement.textContent = "0.00";
+    document.querySelector('.checkout-button').style.display = 'none';
     return;
   }
     // Contenedor principal
@@ -53,7 +47,7 @@ export function renderCartItems() {
           <button class="increase-quantity">+</button>
         </div>
         <p>Est. shipping <span>FREE</span></p>
-        <p class="free-shipping-note">You get FREE SHIPPING!</p>
+        <p class="free-shipping-note">Carga Tu Descuento!</p>
         <p class="cart-item-subtotal">Subtotal: $${(item.price * item.quantity).toFixed(2)}</p>
       </div><button class="remove-item">Eliminar</button>
     `;
@@ -122,31 +116,26 @@ export function renderCartItems() {
         event.target.value = item.quantity; // Restaurar el valor anterior
       }
     });
-    cartContainer.appendChild(cartItem);
+
+
+
+
+     // Agregar event listeners a todos los botones de pago
+  document.querySelectorAll('.checkout-button').forEach(button => {
+    button.addEventListener('click', () => {
+      const productData = {
+        title: item.title,
+        price: item.price,
+        quantity: item.quantity,
+      };
+      crearPreferencia(productData);
+    });
   });
 
 
-    productsSection.innerHTML = `
-      <div class="payment-methods">
-        <h2>Medios de pago incluido</h2>
-        <div class="payment-icons">
-       <img src="${paymentIcons.paypal}" alt="PayPal">
-        <img src="${paymentIcons.mastercard}" alt="Mastercard">
-        <img src="${paymentIcons.visa}" alt="Visa">
-        <img src="${paymentIcons.amex}" alt="American Express">
-        <img src="${paymentIcons.applepay}" alt="Apple Pay">
-        <img src="${paymentIcons.googlepay}" alt="Google Pay">
-        </div>
-      </div>
-    `;
+    cartContainer.appendChild(cartItem);
+  });
 
-
-
-
-
-      // Mostrar el total 
-      cartContent.appendChild(productsSection);
-      cartContainer.appendChild(cartContent); 
   cartTotalElement.textContent = cartState.total.toFixed(2);
 }
 // Renderizar los productos al cargar la página

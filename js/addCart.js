@@ -1,7 +1,7 @@
 import { createElement } from './funcionesExtras.js';
 import { updateCartCounter } from './cartCounter.js';
 import { cartState } from './cart.js';
-import { crearPreferencia } from './mercadoPago.js';
+/* import { crearPreferencia } from './mercadoPago.js'; */
 
 // Renderizar productos en el carrito
 export function renderCartItems() {
@@ -121,7 +121,7 @@ export function renderCartItems() {
 
 
      // Agregar event listeners a todos los botones de pago
-  document.querySelectorAll('.checkout-button').forEach(button => {
+ /*  document.querySelectorAll('.checkout-button').forEach(button => {
     button.addEventListener('click', () => {
       const productData = {
         title: item.title,
@@ -130,7 +130,7 @@ export function renderCartItems() {
       };
       crearPreferencia(productData);
     });
-  });
+  }); */
 
 
     cartContainer.appendChild(cartItem);

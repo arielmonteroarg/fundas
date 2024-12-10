@@ -121,7 +121,7 @@ export function renderCartItems() {
 
 
      // Agregar event listeners a todos los botones de pago
- /*  document.querySelectorAll('.checkout-button').forEach(button => {
+/*   document.querySelectorAll('.checkout-button').forEach(button => {
     button.addEventListener('click', () => {
       const productData = {
         title: item.title,

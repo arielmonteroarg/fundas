@@ -4,21 +4,71 @@
   function setupHeaderTop() {
     const closeButton = document.querySelector('.close-button');
     const headerTop = document.querySelector('.header-top');
-    
+    const slider = document.querySelector('.vtex-slider-layout-0-x-sliderTrack');
+    const slides = document.querySelectorAll('.vtex-slider-layout-0-x-slide');
+  
+    let currentIndex = 0; // Índice actual del slider
+    const slideCount = slides.length;
+  
+    // Duplicar los primeros slides al final para un efecto continuo
+    slides.forEach(slide => {
+      const clonedSlide = slide.cloneNode(true);
+      slider.appendChild(clonedSlide);
+    });
+  
     if (closeButton && headerTop) {
-        closeButton.addEventListener('click', () => {
-            headerTop.style.display = 'none';
-        });  
+      closeButton.addEventListener('click', () => {
+        headerTop.style.display = 'none'; // Oculta la barra superior
+      });
     }
-}  
+  
+    function moveToNextSlide() {
+      const slideWidth = slides[0].offsetWidth; // Calcula el ancho de un slide
+      currentIndex++;
+      slider.style.transition = 'transform 0.5s ease-in-out';
+      slider.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+  
+      // Volver al inicio sin transición si se alcanza el final
+      if (currentIndex === slideCount) {
+        setTimeout(() => {
+          slider.style.transition = 'none';
+          currentIndex = 0;
+          slider.style.transform = `translateX(0)`;
+        }, 500); // El tiempo debe coincidir con la duración de la transición
+      }
+    }
+  
+    // Configura el slider para pasar automáticamente cada 3 segundos
+    setInterval(moveToNextSlide, 2000);
+  
+    // Ajustar el slider al redimensionar la ventana
+    window.addEventListener('resize', () => {
+      const slideWidth = slides[0].offsetWidth;
+      slider.style.transition = 'none'; // Evitar animación durante el ajuste
+      slider.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+    });
+  }
 
 export function renderNavbar() {
     const navbar = document.getElementById('navbar');
     navbar.innerHTML = `
-      <div class="header-top">😜📢🤳Descuentos Por ordenes superiores a $1000.00 🔥🔥🔥 😎😎⏳⏳⏳
-        <button class="close-button" aria-label="Cerrar mensaje">×</button>
-        </div>
-   
+       <div class="header-top">
+      <button class="close-button" aria-label="Cerrar mensaje">×</button>
+      <section aria-label="slider" class="vtex-slider-layout-0-x-sliderLayoutContainer">
+        <div class="vtex-slider-layout-0-x-sliderTrackContainer">
+          <div class="vtex-slider-layout-0-x-sliderTrack">
+    
+            <div class="vtex-slider-layout-0-x-slide">😜📢🤳Descuentos por órdenes superiores a $1000.00 🔥🔥🔥 😎😎⏳⏳⏳</div>
+            <div class="vtex-slider-layout-0-x-slide">🚀🛍️ Descuento de temporada: ¡aprovecha ahora! 🕒💰</div>
+            <div class="vtex-slider-layout-0-x-slide">🎉📣 Grandes descuentos en toda la tienda 💥🔥</div>  
+           
+          </div>     
+      
+        </div> 
+        
+     
+      </section>
+    </div>
     <nav class="nav-container">
      <div class="logo"><a href="index.html" ><img src="img/logo.png" alt="logo"></a></div>
         <div  class="search-box">

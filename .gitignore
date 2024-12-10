@@ -3,3 +3,4 @@
 composer.json
 composer.lock
 /js/mercadoPago.js
+/js/productpaginator.js

@@ -273,38 +273,6 @@ main {
 }
 
 
-  /* STILOS DEL HEADER TOP */
-.header-top {
-  background: black;
-  color: white;
-  text-align: center;
-  font-size: 14px;
-  padding: 8px 0;
-  position: relative; /* Para posicionar el botón de cierre */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-}
-
-.close-button {
-  background: transparent;
-  border: none;
-  color: white;
-  font-size: 20px;
-  cursor: pointer;
-  padding: 0 8px;
-  position: absolute;
-  right: 10px;
-  top: 50%;
-  transform: translateY(-50%);
-  transition: opacity 0.3s ease;
-}
-
-.close-button:hover {
-  opacity: 0.7;
-}
-
 
 
 
@@ -408,4 +376,80 @@ main {
 .payment-icons img:hover {
   filter: grayscale(0);
   opacity: 1;
+}
+
+
+
+
+
+
+/* STILOS DEL HEADER TOP */
+.header-top {
+  background: black;
+  color: white;
+  text-align: center;
+  font-size: 14px;
+  padding: 8px 0;
+  position: relative; /* Para posicionar elementos dentro del contenedor */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  overflow: hidden; /* Evitar desbordamiento del contenido */
+}
+
+/* Botón de cierre */
+/* STILOS DEL HEADER TOP */
+.header-top {
+  background: black;
+  color: white;
+  text-align: center;
+  font-size: 14px;
+  padding: 8px 0;
+  position: relative; /* Para posicionar el botón de cierre */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /* Evitar desbordamiento del contenido */
+}
+
+/* Botón de cierre */
+.close-button {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 0 8px;
+  position: absolute;
+  right: 10px; /* Alineado al borde derecho */
+  top: 50%;
+  transform: translateY(-50%);
+  transition: opacity 0.3s ease;
+}
+
+.close-button:hover {
+  opacity: 0.7;
+}
+
+/* Contenedor del slider */
+.vtex-slider-layout-0-x-sliderTrackContainer {
+  overflow: hidden; /* Esconder contenido desbordante */
+  width: 100%; /* Ocupa todo el ancho */
+}
+
+/* Pista de slides */
+.vtex-slider-layout-0-x-sliderTrack {
+  display: flex;
+  transition: transform 0.5s ease-in-out; /* Animación de desplazamiento */
+  will-change: transform; /* Mejora el rendimiento */
+}
+
+/* Cada slide individual */
+.vtex-slider-layout-0-x-slide {
+  min-width: 100%; /* Cada slide ocupa el ancho completo */
+  text-align: center;
+  color: white;
+  font-size: 1rem;
+  padding: 10px 0;
 }

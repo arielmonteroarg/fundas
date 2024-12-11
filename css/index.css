@@ -1,7 +1,8 @@
 .banner {
-    background-image: url('https://img.freepik.com/free-photo/black-brick-wall-textured-background_53876-63572.jpg');
-    background-size: cover;
-    background-position: center;
+  background-image: url('../img/bannerp.png');
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
 }
 
 .banner-content {
@@ -14,19 +15,22 @@
 
 .banner h1 {
   font-size: 4rem;
-  color: #ff0000;
+  color: #d1cccc;
   text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
 }
 
 .coupon-tag {
-  background: white;
-  color: black;
+  background: #2D1B3A;
+  color: #f5f5f5;
   padding: 1rem;
   border-radius: 10px;
   display: inline-block;
   margin: 1rem 0;
 }
+.offer-end{
+  color: #d1cccc;
 
+}
 .products-section {
   padding: 4rem 2rem;
 }
@@ -120,131 +124,3 @@
   }
 
 
-
-.footer {
-    background-color: #333;
-    color: white;
-    padding: 40px 0 20px;
-  }
-  
-  /* Nuevo estilo para la sección Stay in Touch */
-  .stay-in-touch {
-    text-align: center;
-    max-width: 1200px;
-    margin: 0 auto 40px;
-    padding: 0 20px;
-  }
-  
-  .stay-in-touch h3 {
-    color: white;
-    margin-bottom: 20px;
-  }
-  
-  .footer-form {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    max-width: 400px;
-    margin: 0 auto;
-  }
-  
-  .footer-form input {
-    padding: 8px;
-    border: none;
-    width: 300px;
-  }
-  
-  .footer-form button {
-    background-color: #222;
-    color: white;
-    border: none;
-    padding: 8px 15px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .footer-form button:hover {
-    background-color: #444;
-  }
-  
-  /* Estilos para las columnas */
-  .footer-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
-    padding: 0 20px;
-    border-top: 1px solid #444;
-    padding-top: 40px;
-  }
-  
-  /* Los demás estilos se mantienen igual */
-  .footer-section h3 {
-    color: white;
-    font-size: 16px;
-    margin-bottom: 20px;
-  }
-  
-  .footer-section ul {
-    list-style: none;
-    padding: 0;
-  }
-  
-  .footer-section ul li {
-    margin-bottom: 10px;
-  }
-  
-  .footer-section ul li a {
-    color: #999;
-    text-decoration: none;
-    font-size: 14px;
-    transition: color 0.3s ease;
-  }
-  
-  .footer-section ul li a:hover {
-    color: white;
-  }
-  
-  .contact-info li {
-    color: #999;
-    font-size: 14px;
-    margin-bottom: 15px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-  
-  .contact-info i {
-    color: white;
-    width: 20px;
-  }
-  
-  .footer-bottom {
-    text-align: center;
-    margin-top: 40px;
-    padding-top: 20px;
-    border-top: 1px solid #444;
-  }
-  
-  /* Responsive design */
-  @media (max-width: 768px) {
-    .footer-content {
-      grid-template-columns: repeat(2, 1fr);
-    }
-    
-    .footer-form {
-      flex-direction: column;
-      align-items: center;
-    }
-    
-    .footer-form input {
-      width: 100%;
-    }
-  }
-  
-  @media (max-width: 480px) {
-    .footer-content {
-      grid-template-columns: 1fr;
-    }
-  }

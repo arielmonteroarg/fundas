@@ -4,20 +4,39 @@ export const cartState = {
     items: [],
     total: 0,
     counterProducts: 0,
+    user: "",
+    email: "",
+    password:"",
   
     init() {
       const storedItems = JSON.parse(localStorage.getItem('cartItems'));
       const storedTotal = parseFloat(localStorage.getItem('cartTotal'));
       const storedProducts = parseInt(localStorage.getItem('productsTotal'), 10); // Asegurar que es entero
+
+      //usuarios
+      const storedUser = localStorage.getItem('username') || "";
+      const storedEmail = localStorage.getItem('email') || "";
+      const storedPassword = localStorage.getItem('password') || "";
+
       this.items = storedItems || [];
       this.total = storedTotal || 0;
       this.counterProducts = storedProducts || 0; // Si no hay valor, iniciar en 0
+
+      //ussuarios
+      this.user = storedUser || "";
+      this.email = storedEmail || "";
+      this.password = storedPassword || "";
     },
   
     saveToLocalStorage() {
       localStorage.setItem('cartItems', JSON.stringify(this.items));
       localStorage.setItem('cartTotal', this.total.toFixed(2));
       localStorage.setItem('productsTotal', this.counterProducts);
+
+      //usuarios
+      localStorage.setItem('username', this.user);
+      localStorage.setItem('email', this.email);
+      localStorage.setItem('password', this.password);
     },
 
     

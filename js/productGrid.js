@@ -6,13 +6,13 @@ const products = [
     { id: 2, title: 'Samsung',category: "Funda",     description: 'Phone Case - Fox', price: 9.99, image: './img/img2.webp' },
       { id: 3, title: 'FASTHOUSE',category: "Funda", description: 'Phone Case - Fox', price: 9.99, image: './img/img3.webp' },
 
-      { id: 4, title: 'Samsung',category: "Funda", description: 'Phone Case - Fox', price: 29.99, image: './img/img1.webp' },
-      { id: 5, title: 'Xiaomi',category: "Funda",     description: 'Phone Case - Fox', price: 44.99, image: './img/img2.webp' },
-        { id: 6, title: 'Oppo',category: "Funda", description: 'Phone Case - Fox', price: 34.99, image: './img/img3.webp' },
+      { id: 4, title: 'Samsung',category: "Funda", description: 'Phone Case - Fox', price: 29.99, image: './img/img4.webp' },
+      { id: 5, title: 'Xiaomi',category: "Funda",     description: 'Phone Case - Fox', price: 44.99, image: './img/img5.webp' },
+        { id: 6, title: 'Oppo',category: "Funda", description: 'Phone Case - Fox', price: 34.99, image: './img/img6.webp' },
 
-      { id: 7, title: 'Motorola',category: "Funda", description: 'Phone Case - Fox', price: 34.99, image: './img/img1.webp' },
-      { id: 8, title: 'Huawei',category: "Funda", description: 'Phone Case - Fox', price: 44.99, image: './img/img2.webp' },
-      { id: 9, title: 'Realme',category: "Funda", description: 'Phone Case - Fox', price: 29.99, image: './img/img3.webp' },
+      { id: 7, title: 'Motorola',category: "Funda", description: 'Phone Case - Fox', price: 34.99, image: './img/img7.webp' },
+      { id: 8, title: 'Huawei',category: "Funda", description: 'Phone Case - Fox', price: 44.99, image: './img/img8.webp' },
+      { id: 9, title: 'Realme',category: "Funda", description: 'Phone Case - Fox', price: 29.99, image: './img/img9.webp' },
     ];
 
     // Renderizar todos los productos al cargar la página
@@ -115,15 +115,18 @@ function searchRecords() {
   });
 }
 
-// Eventos para el input de búsqueda
-searchInput.addEventListener("input", () => {
-/*   console.log('searchInput:', searchInput);
-  console.log('searchInput.value:', searchInput.value); */
-  const searchTerm = searchInput.value ? searchInput.value.trim() : '';
-  if (searchTerm.length >= 3 || searchTerm.length === 0) {
-    searchRecords();
-  }
-});
+if (searchInput && productGrid) {
+  // Inicializar el renderizado de productos
+  renderAllProducts();
+
+  // Agregar evento de búsqueda
+  searchInput.addEventListener("input", () => {
+    const searchTerm = searchInput.value ? searchInput.value.trim() : '';
+    if (searchTerm.length >= 3 || searchTerm.length === 0) {
+      searchRecords();
+    }
+  });
+}
 
 
   // Inicializar renderizado de productos

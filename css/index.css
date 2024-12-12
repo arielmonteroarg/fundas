@@ -1,34 +1,29 @@
 .banner {
-  background-image: url('../img/bannerp.png');
-  background-size: cover;
-  background-position: center;
-  border-radius: 10px;
+  background-image: url('../img/banner-black-friday.webp'); 
+  background-size: cover; 
+  background-position: center; 
+  background-repeat: no-repeat; 
+  width: 100%; 
+  height: auto; 
+  aspect-ratio: 21/9; 
+  border-radius: 10px; 
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  overflow: hidden; 
 }
 
-.banner-content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 1200px;
-  margin: 0 auto;
+/* Media queries para ajustar en dispositivos más pequeños */
+@media (max-width: 768px) {
+  .banner h1 {
+    aspect-ratio: 16/7;
+  }
 }
 
-.banner h1 {
-  font-size: 4rem;
-  color: #d1cccc;
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-}
-
-.coupon-tag {
-  background: #2D1B3A;
-  color: #f5f5f5;
-  padding: 1rem;
-  border-radius: 10px;
-  display: inline-block;
-  margin: 1rem 0;
-}
-.offer-end{
-  color: #d1cccc;
+@media (max-width: 480px) {
+  .banner h1 {
+    aspect-ratio: 16/6;
+  }
 
 }
 .products-section {

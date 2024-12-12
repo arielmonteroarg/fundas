@@ -6,6 +6,7 @@
     const headerTop = document.querySelector('.header-top');
     const slider = document.querySelector('.vtex-slider-layout-0-x-sliderTrack');
     const slides = document.querySelectorAll('.vtex-slider-layout-0-x-slide');
+    
   
     let currentIndex = 0; // Índice actual del slider
     const slideCount = slides.length;
@@ -53,6 +54,7 @@
 
 
 export function renderNavbar() {
+  const isProductosPage = window.location.pathname.includes('product.html');
     const navbar = document.getElementById('navbar');
     navbar.innerHTML = `
   <div class="header-top">
@@ -73,9 +75,11 @@ export function renderNavbar() {
 </div>
     <nav class="nav-container">
       <div class="logo"><a href="index.html"><img src="img/logo.png" alt="logo"></a></div>
-      <div class="search-box">
-        <input id="search-box" type="search" placeholder="Buscar productos..." aria-label="Buscar">
-      </div>
+    ${isProductosPage ? `
+    <div class="search-box">
+      <input id="search-box" type="search" placeholder="Buscar productos..." aria-label="Buscar">
+    </div>
+    ` : ''}
       <div class="nav-icons">
         <a href="login.html" class="user-icon" id="user-link">
           <i class="fas fa-user"></i><span class="login-text" id="login-text">Sign in / Create account</span>
@@ -114,9 +118,6 @@ export function renderNavbar() {
   }
  
   renderNavbar();
-  document.addEventListener("DOMContentLoaded", () => {
 
- 
-  });
 
 

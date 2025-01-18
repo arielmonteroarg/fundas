@@ -1,19 +1,44 @@
 import { createElement } from './funcionesExtras.js';
 import { cartState } from './cart.js';
 
+const products = [
+    { id: 1, title: 'RIDING PHOTO',category: "Funda", description: 'Phone Case - Fox', price: 10.00, image: './img/img1.webp' },
+    { id: 2, title: 'Samsung',category: "Funda",     description: 'Phone Case - Fox', price: 9.99, image: './img/img2.webp' },
+      { id: 3, title: 'FASTHOUSE',category: "Funda", description: 'Phone Case - Fox', price: 9.99, image: './img/img3.webp' },
+
+      { id: 4, title: 'Samsung',category: "Funda", description: 'Phone Case - Fox', price: 29.99, image: './img/img4.webp' },
+      { id: 5, title: 'Xiaomi',category: "Funda",     description: 'Phone Case - Fox', price: 44.99, image: './img/img5.webp' },
+        { id: 6, title: 'Oppo',category: "Funda", description: 'Phone Case - Fox', price: 34.99, image: './img/img6.webp' },
+
+      { id: 7, title: 'Motorola',category: "Funda", description: 'Phone Case - Fox', price: 34.99, image: './img/img7.webp' },
+      { id: 8, title: 'Huawei',category: "Funda", description: 'Phone Case - Fox', price: 44.99, image: './img/img8.webp' },
+      { id: 9, title: 'Realme',category: "Funda", description: 'Phone Case - Fox', price: 29.99, image: './img/img9.webp' },
+    ];
+
 // Renderizar todos los productos al cargar la página
 const productGrid = document.getElementById('product-grid');
 
 // Input de búsqueda
 const searchInput = document.getElementById('search-box');
 
-
+/* 
+     if (productGrid) {
+      productGrid.innerHTML = ''; // Limpiar la cuadrícula
+      products.forEach(product => {
+        const productCard = renderProductGrid(product);
+        productGrid.appendChild(productCard);
+      });
+    } else {
+      console.error("El contenedor de productos no se encontró.");
+    } */
 
 // Lista de productos
-let products = [];
+
+//esta parte la comento para cuando tenga que traer archivos desde una api
+/* let products = []; */
 
 // Función para obtener los productos desde un archivo JSON
-async function fetchProducts() {
+/* async function fetchProducts() {
   try {
     const response = await fetch('http://127.0.0.1:5500/shopFundas/product.json');
     if (!response.ok) {
@@ -25,7 +50,7 @@ async function fetchProducts() {
     console.error(error);
     productGrid.innerHTML = '<p>Error al cargar los productos. Inténtalo más tarde.</p>';
   }
-}
+} */
 
 
 export function renderProductGrid(product = ' ' ) {
@@ -126,5 +151,5 @@ if (searchInput && productGrid) {
 }
 
 // Inicializar renderizado de productos
-/* renderAllProducts(); */
-fetchProducts();
+renderAllProducts();
+/* fetchProducts(); */
